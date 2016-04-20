@@ -2,16 +2,9 @@
 # -*- coding: utf-8 -*-
 
 
-n = int(input())
+marksheet = []
+for _ in range(0,int(input())):
+    marksheet.append([input(), float(input())])
 
-arr = [[]]
-
-for i in range(n):
-    name = str(input())
-    score = int(input())
-    carr = [name, score]
-    arr.append(carr)
-    
-
-del arr[0]
-print(arr)
+second_highest = sorted(list(set([marks for name, marks in marksheet])))[1]
+print('\n'.join([a for a,b in sorted(marksheet) if b == second_highest]))
